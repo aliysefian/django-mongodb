@@ -13,14 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from mongotestbase.models import EntryTest
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from mongotestbase.views import UserViewSet
+from mongotestbase.views import EntryTestViewSet, EntryViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'entry', EntryViewSet)
+router.register(r'test', EntryTestViewSet)
+
+
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),

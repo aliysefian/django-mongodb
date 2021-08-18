@@ -85,6 +85,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'mytestdb',
+            'ENFORCE_SCHEMA': False,
 
         'CLIENT': {
             'host': "mongodb+srv://ali:1372@cluster0.htc8t.mongodb.net/test",
